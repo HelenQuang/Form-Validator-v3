@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Form from "./components/Form";
+import UserTable from "./components/UserTable";
+import React, { useState } from "react";
+import { UserList } from "./models/UserList";
 
-function App() {
+const App: React.FC = () => {
+  const [usersList, setUsersList] = useState<UserList[]>([
+    {
+      key: "123",
+      firstname: "Ha",
+      lastname: "Quang",
+      birth: "25/06/1997",
+      email: "qvha.97@gmail.com",
+      username: "CamTheMeow",
+    },
+  ]);
+
+  const addNewUserHandler = (
+    userFirstname: string,
+    userLastname: string,
+    userBirth: string,
+    userEmail: string,
+    userUsername: string
+  ) => {
+    setUsersList((prevUsersList) => {
+      return [
+        ...prevUsersList,
+        {
+          key: Math.random().toString(),
+          firstname: userFirstname,
+          lastname: userLastname,
+          birth: userBirth,
+          email: userEmail,
+          username: userUsername,
+        },
+      ];
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Form />
+      <UserTable users={usersList} />
     </div>
   );
-}
+};
 
 export default App;
