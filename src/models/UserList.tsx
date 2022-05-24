@@ -1,8 +1,8 @@
 export interface UserList {
   key: string;
-  firstname: string;
-  lastname: string;
-  birth: string;
+  firstName: string;
+  lastName: string;
+  DOB: string;
   email: string;
   username: string;
 }

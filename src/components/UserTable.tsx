@@ -20,11 +20,11 @@ const UserTable: React.FC<UserTableProps> = ({ users }) => {
           </tr>
 
           {users.map((user) => (
-            <tr>
+            <tr key={user.key}>
               <td>
-                {user.firstname} {user.lastname}
+                {user.firstName} {user.lastName}
               </td>
-              <td>{user.birth}</td>
+              <td>{user.DOB}</td>
               <td>{user.email}</td>
               <td>{user.username}</td>
             </tr>
