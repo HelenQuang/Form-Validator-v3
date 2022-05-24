@@ -173,6 +173,7 @@ const Form: React.FC<FormProps> = ({ addNewUserHandler }) => {
         placeholder={"Enter your first name"}
         validateFn={validateFirstNameFn}
         type={"text"}
+        value={firstName}
       />
 
       <Input
@@ -180,6 +181,7 @@ const Form: React.FC<FormProps> = ({ addNewUserHandler }) => {
         placeholder={"Enter your last name"}
         validateFn={validateLastNameFn}
         type={"text"}
+        value={lastName}
       />
 
       <Input
@@ -187,6 +189,7 @@ const Form: React.FC<FormProps> = ({ addNewUserHandler }) => {
         placeholder={"DD/MM/YYYY"}
         validateFn={validateDOBFn}
         type={"text"}
+        value={DOB}
       />
 
       <Input
@@ -194,6 +197,7 @@ const Form: React.FC<FormProps> = ({ addNewUserHandler }) => {
         placeholder={"Enter your email"}
         validateFn={validateEmailFn}
         type={"text"}
+        value={email}
       />
 
       <Input
@@ -201,6 +205,7 @@ const Form: React.FC<FormProps> = ({ addNewUserHandler }) => {
         placeholder={"Enter your username"}
         validateFn={validateUsernameFn}
         type={"text"}
+        value={username}
       />
 
       <Input
@@ -208,6 +213,7 @@ const Form: React.FC<FormProps> = ({ addNewUserHandler }) => {
         placeholder={"Enter your password"}
         validateFn={validatePassword1Fn}
         type={"password"}
+        value={password1}
       />
 
       <Input
@@ -215,6 +221,7 @@ const Form: React.FC<FormProps> = ({ addNewUserHandler }) => {
         placeholder={"Enter your password again"}
         validateFn={validatePassword2Fn}
         type={"password"}
+        value={password2}
       />
 
       <Button type="submit">Submit</Button>

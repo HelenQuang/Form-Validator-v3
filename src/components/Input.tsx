@@ -5,6 +5,7 @@ interface InputProps {
   placeholder: string;
   type: string;
   validateFn: (input: string) => void;
+  value: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -12,6 +13,7 @@ const Input: React.FC<InputProps> = ({
   type,
   placeholder,
   validateFn,
+  value,
 }) => {
   const textInputRef = useRef<HTMLInputElement>(null);
 
@@ -27,6 +29,7 @@ const Input: React.FC<InputProps> = ({
         placeholder={placeholder}
         ref={textInputRef}
         onChange={validateHandler}
+        value={value}
       />
     </div>
   );
